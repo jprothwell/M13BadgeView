@@ -78,7 +78,7 @@
     _shadowText = NO;
     _shadowBorder = NO;
     _shadowBadge = NO;
-    _hidesWhenZero = NO;
+    _hidesWhenZero = YES;
     _pixelPerfectText = YES;
     
     //Set the minimum width / height if necessary;
@@ -497,7 +497,7 @@
 #pragma mark - Private
 
 - (void)hideForZeroIfNeeded{
-    self.hidden = ([_text isEqualToString:@"0"] && _hidesWhenZero);
+    self.hidden = ((nil==_text||0==[_text length]||[_text isEqualToString:@"0"])&& _hidesWhenZero);
 }
 
 @end
